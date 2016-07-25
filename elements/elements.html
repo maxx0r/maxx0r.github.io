@@ -17951,11 +17951,7 @@ module.exports = Array.isArray || function (arr) {
       next();
     }
 
-    function closeDrawer(ctx, next) {
-      app.closeDrawer();
-      next();
-    }
-
+    
     function setFocus(selected){
       Polymer.dom(document)
         .querySelector('section[data-route="' + selected + '"] .focus-target')
@@ -17963,7 +17959,7 @@ module.exports = Array.isArray || function (arr) {
     }
 
     // Routes
-    page('*', scrollToTop, closeDrawer, function(ctx, next) {
+    page('*', scrollToTop, function(ctx, next) {
       next();
     });
 
